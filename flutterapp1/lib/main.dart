@@ -16,12 +16,14 @@ class MyApp extends StatelessWidget {
 class MainActivity extends StatelessWidget {
   MainActivity({super.key});
 
+  // Sneckbar
   mySnackBar(message, context) {
     ScaffoldMessenger.of(
       context,
     ).showSnackBar(SnackBar(content: Text(message)));
   }
 
+  //Button Style
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
     padding: EdgeInsets.all(25.0),
     backgroundColor: Colors.blue,
@@ -31,18 +33,32 @@ class MainActivity extends StatelessWidget {
     ),
   );
 
+  // AlartDialog
   myAlartDialog(context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return Expanded(child: AlertDialog(
-          title: Text("Alart !"),
-          content: Text("Do you want to delete?"),
-          actions: [
-            TextButton(onPressed: (){Navigator.pop(context); mySnackBar("Delete Success", context);}, child: Text("Yes")),
-            TextButton(onPressed: (){Navigator.pop(context);}, child: Text("No")),
-          ],
-        ));
+        return Expanded(
+          child: AlertDialog(
+            title: Text("Alart !"),
+            content: Text("Do you want to delete?"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  mySnackBar("Delete Success", context);
+                },
+                child: Text("Yes"),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("No"),
+              ),
+            ],
+          ),
+        );
       },
     );
   }
@@ -220,7 +236,54 @@ class MainActivity extends StatelessWidget {
 
             // Dialog Alart
             Center(
-              child: ElevatedButton(onPressed: () {myAlartDialog(context);}, child: Text("Click Me")),
+              child: ElevatedButton(
+                onPressed: () {
+                  myAlartDialog(context);
+                },
+                child: Text("Click Me"),
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      label: Text("First Name"),
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      label: Text("First Name"),
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      label: Text("First Name"),
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Submit",style: TextStyle(color: Colors.white),),
+                      style: buttonStyle,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
