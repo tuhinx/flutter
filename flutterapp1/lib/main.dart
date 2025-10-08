@@ -286,7 +286,7 @@ class MainActivity extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {mySnackBar("Submit Successful", context);},
                       child: Text("Submit",style: TextStyle(color: Colors.white),),
                       style: buttonStyle,
                     ),
