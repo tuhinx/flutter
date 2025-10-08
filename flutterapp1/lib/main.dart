@@ -65,31 +65,11 @@ class MainActivity extends StatelessWidget {
 
   // Json Array
   final MyItems = [
-    {
-      "img":
-          "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
-      "title": "Image 1",
-    },
-    {
-      "img":
-          "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
-      "title": "Image 2",
-    },
-    {
-      "img":
-          "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
-      "title": "Image 3",
-    },
-    {
-      "img":
-          "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
-      "title": "Image 4",
-    },
-    {
-      "img":
-          "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU",
-      "title": "Image 5",
-    },
+    {"img":"https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU", "title":"Image 1"},
+    {"img":"https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU", "title":"Image 2"},
+    {"img":"https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU", "title":"Image 3"},
+    {"img":"https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU", "title":"Image 4"},
+    {"img":"https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU", "title":"Image 5"},
   ];
 
   @override
@@ -306,61 +286,30 @@ class MainActivity extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(10),
                     child: ElevatedButton(
-                      onPressed: () {
-                        mySnackBar("Submit Successful", context);
-                      },
-                      child: Text(
-                        "Submit",
-                        style: TextStyle(color: Colors.white),
-                      ),
+                      onPressed: () {mySnackBar("Submit Successful", context);},
+                      child: Text("Submit",style: TextStyle(color: Colors.white),),
                       style: buttonStyle,
                     ),
                   ),
                 ),
 
-                //Dynamic List View
                 ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: MyItems.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        mySnackBar(MyItems[index]['title'], context);
-                      },
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        width: double.infinity,
-                        height: 220,
-                        child: Image.network(
-                          MyItems[index]['img']!,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    );
-                  },
-                ),
-
-                // Dynamic Grid View
-                GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 0,
-                    childAspectRatio: 1.5
-                  ),
                   shrinkWrap: true,
                   itemCount: MyItems.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: (){mySnackBar(MyItems[index]['title'], context);},
                       child: Container(
-                        margin: EdgeInsets.all(5),
+                        margin: EdgeInsets.all(10),
                         width: double.infinity,
                         height: 220,
-                        child: Image.network(MyItems[index]['img']!, fit: BoxFit.fill,),
+                        child: Image.network(MyItems[index]['img']!,fit: BoxFit.fill,),
+
                       ),
                     );
                   },
-                ),
+                )
+
               ],
             ),
           ],
