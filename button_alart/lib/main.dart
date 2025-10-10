@@ -23,8 +23,19 @@ myAlartDialog(context) {
           title: Text("Alart Dialog"),
           content: Text("Are you Sure "),
           actions: [
-            TextButton(onPressed: () {Navigator.pop(context);}, child: Text("No")),
-            TextButton(onPressed: () {Navigator.pop(context); mySnackBar("Successful", context);}, child: Text("Yes")),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text("No"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                mySnackBar("Successful", context);
+              },
+              child: Text("Yes"),
+            ),
           ],
         ),
       );
@@ -100,22 +111,13 @@ class MainActivity extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(10),
-        child: Column(
-          children: [
-            //ElevatedButton
-            ElevatedButton(
-              onPressed: () {
-                myAlartDialog(context);
-              },
-              style: buttonmy,
-              child: Text(
-                "ElevatedButton",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ],
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            myAlartDialog(context);
+          },
+          style: buttonmy,
+          child: Text("ElevatedButton", style: TextStyle(color: Colors.white)),
         ),
       ),
     );
