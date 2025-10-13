@@ -36,14 +36,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // App Bar Section
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text("ListView Class", style: TextStyle(color: Colors.white)),
         centerTitle: true,
       ),
-
+      // Body Section
       body: buidlistViews(),
-
+      // BottomNavigationBar Section
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         items: [
@@ -152,7 +153,7 @@ class _HomePageState extends State<HomePage> {
       padding: EdgeInsets.all(16),
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
-        return Container(
+        return SizedBox(
           width: 100,
           height: 50,
           child: ListTile(
