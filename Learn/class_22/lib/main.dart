@@ -12,16 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int index = 0;
-  List<int> myLists = [];
 
-  @override
-  void initState() {
-    for (int i = 0; i < 10; i++) {
-      myLists.add(i);
-    }
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
