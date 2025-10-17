@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "625027719469",
+    "firebase_url": "https://bubtbus-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bubtbus",
+    "storage_bucket": "bubtbus.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625027719469:android:958d30bdf6657e04f133a4",
+        "android_client_info": {
+          "package_name": "com.tuhinx.bubt_bus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWCuWOp9a6Zg8If45k-BD3DcxbvpIx_RQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625027719469:android:2e3983c870edf04af133a4",
+        "android_client_info": {
+          "package_name": "io.github.tuhinx.ecommerce.flutter_ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWCuWOp9a6Zg8If45k-BD3DcxbvpIx_RQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
